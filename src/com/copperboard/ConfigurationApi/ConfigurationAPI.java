@@ -12,7 +12,7 @@ import java.util.*;
 * <pre>
 * {@code
 *
-* com.copperboard.ConfigurationApi.ConfigurationAPI.ConfigurationSection section = com.copperboard.ConfigurationApi.ConfigurationAPI.load("C:\\test.txt");
+* ConfigurationAPI.ConfigurationSection section = ConfigurationAPI.load("C:\\test.txt");
 *
 * int age = section.getInt("age");
 * String name = section.getString("name");
@@ -107,7 +107,7 @@ public class ConfigurationAPI {
                     try {
                         Files.createFile(path, new FileAttribute<?>[0]);
                     } catch (IOException e) {
-                        System.out.print("[com.copperboard.ConfigurationApi.ConfigurationAPI] Error creating a file in: " + path.toUri());
+                        System.out.print("[ConfigurationAPI] Error creating a file in: " + path.toUri());
                     }
                 }else
                     return;
@@ -119,7 +119,7 @@ public class ConfigurationAPI {
                     processLine(scanner.nextLine());
                 }
             } catch (IOException e){
-                System.out.print("[com.copperboard.ConfigurationApi.ConfigurationAPI] Error loading a file from: "+path.toUri());
+                System.out.print("[ConfigurationAPI] Error loading a file from: "+path.toUri());
             }
         }
         private void processLine(String aLine){
@@ -182,7 +182,7 @@ public class ConfigurationAPI {
             try {
                 return obj == null ? 0 : Float.parseFloat(obj);
             }catch (NumberFormatException e){
-                System.out.print("[com.copperboard.ConfigurationApi.ConfigurationAPI] Couldn't parse Float from \""+obj+"\"");
+                System.out.print("[ConfigurationAPI] Couldn't parse Float from \""+obj+"\"");
                 return 0;
             }
         }
@@ -197,7 +197,7 @@ public class ConfigurationAPI {
             try {
                 return obj == null ? 0 : Long.parseLong(obj);
             }catch (NumberFormatException e){
-                System.out.print("[com.copperboard.ConfigurationApi.ConfigurationAPI] Couldn't parse Long from \""+obj+"\"");
+                System.out.print("[ConfigurationAPI] Couldn't parse Long from \""+obj+"\"");
                 return 0;
             }
         }
@@ -212,7 +212,7 @@ public class ConfigurationAPI {
             try {
                 return obj == null ? 0 : Integer.parseInt(obj);
             }catch (NumberFormatException e){
-                System.out.print("[com.copperboard.ConfigurationApi.ConfigurationAPI] Couldn't parse Integer from \""+obj+"\"");
+                System.out.print("[ConfigurationAPI] Couldn't parse Integer from \""+obj+"\"");
                 return 0;
             }
         }
